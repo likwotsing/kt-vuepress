@@ -2,6 +2,18 @@ module.exports = {
   title: 'kt-vuepress',
   description: 'Just playing around',
   base: '/kt-vuepress/',
+  locales: {
+    '/': {
+      lang: 'zh-CN',
+      title: 'VuePress',
+      description: 'Vue 驱动的静态网站生成器'
+    },
+    '/en/': {
+      lang: 'en-US',
+      title: 'VuePress',
+      description: 'Vue-powered Static Site Generator'
+    }
+  },
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
@@ -21,20 +33,29 @@ module.exports = {
     repoLabel: '查看源码',
     docsDir: 'docs',
     logo: '/assets/img/logo.png',
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Git', link: '/zh/git/' },
-      { text: 'External', link: 'https://baidu.com' },
-      { text: '参考', link: 'https://github.com/likwotsing/my-vuepress' }
-    ],
     sidebar: 'auto',
-    lastUpdated: '上次更新', // string | boolean
     smoothScroll: true,
     editLinks: true,
-    editLinkText: '在GitHub上编辑此页',
     algolia: {
       apiKey: '3a539aab83105f01761a137c61004d85',
       indexName: 'vuepress'
+    },
+    locales: {
+      '/': {
+        label: '简体中文',
+        selectText: '选择语言',
+        editLinkText: '在Github 上编辑此页',
+        lastUpdated: '上次更新',
+        nav: require('./nav/zh')
+      },
+      '/en/': {
+        label: 'English',
+        selectText: 'Languages',
+        ariaLabel: 'Select language',
+        editLinkText: 'Edit this page on GitHub',
+        lastUpdated: 'Last Updated',
+        nav: require('./nav/en'),
+      }
     }
   }
 }
