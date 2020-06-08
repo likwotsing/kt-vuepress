@@ -1,0 +1,34 @@
+{
+  "name": "kt-vuepress",
+  "version": "1.0.0",
+  "description": "vuepress",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "moment": "^2.26.0",
+    "vuepress": "^1.5.0"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.5.0",
+    "@vuepress/plugin-back-to-top": "^1.5.0",
+    "@vuepress/plugin-nprogress": "^1.5.0"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/likwotsing/kt-vuepress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/likwotsing/kt-vuepress/issues"
+  },
+  "homepage": "https://github.com/likwotsing/kt-vuepress#readme"
+}
