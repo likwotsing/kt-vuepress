@@ -7,12 +7,12 @@ vuepress
 1. config.js里主要配置如下：
 	
 	```js
-themeConfig: {
-	  repo: 'likwotsing/kt-vuepress',
-    docsDir: 'docs',
-	  lastUpdated: '上次更新',
-	  editLinks: true,
-	  editLinkText: '在GitHub上编辑此页'
+	themeConfig: {
+		repo: 'likwotsing/kt-vuepress',
+		docsDir: 'docs',
+		lastUpdated: '上次更新',
+		editLinks: true,
+		editLinkText: '在GitHub上编辑此页'
 	}
 	```
 	
