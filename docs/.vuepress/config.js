@@ -15,8 +15,8 @@ module.exports = {
   ]],
   themeConfig: {
     repo: 'likwotsing/kt-vuepress',
+    repoLabel: '查看源码',
     docsDir: 'docs',
-    eidtLinks: true,
     logo: '/assets/img/logo.png',
     nav: [
       { text: 'Home', link: '/' },
@@ -25,7 +25,9 @@ module.exports = {
       { text: '参考', link: 'https://github.com/likwotsing/my-vuepress' }
     ],
     sidebar: 'auto',
-    lastUpdated: 'Last Updated', // string | boolean
-    smoothScroll: true
+    lastUpdated: '上次更新', // string | boolean
+    smoothScroll: true,
+    editLinks: true,
+    editLinkText: '在GitHub上编辑此页'
   }
 }
