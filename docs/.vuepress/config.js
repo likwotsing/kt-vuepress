@@ -2,6 +2,9 @@ module.exports = {
   title: 'kt-vuepress',
   description: 'Just playing around',
   base: '/kt-vuepress/',
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
   plugins: ['@vuepress/back-to-top', '@vuepress/nprogress', '@vuepress/active-header-links', [
     '@vuepress/last-updated',
     {
@@ -28,6 +31,10 @@ module.exports = {
     lastUpdated: '上次更新', // string | boolean
     smoothScroll: true,
     editLinks: true,
-    editLinkText: '在GitHub上编辑此页'
+    editLinkText: '在GitHub上编辑此页',
+    algolia: {
+      apiKey: '3a539aab83105f01761a137c61004d85',
+      indexName: 'vuepress'
+    }
   }
 }
