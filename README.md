@@ -17,6 +17,7 @@ vuepress
 	```
 
   2. 根目录下添加`deploy.sh`文件
+
 	```bash
      #!/usr/bin/env sh
      
