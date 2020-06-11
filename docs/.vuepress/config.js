@@ -37,8 +37,9 @@ module.exports = {
     smoothScroll: true,
     editLinks: true,
     algolia: {
-      apiKey: '3a539aab83105f01761a137c61004d85',
-      indexName: 'vuepress'
+      // apiKey: '3a539aab83105f01761a137c61004d85',
+      apiKey: '3fcf09b732e823c9799ba79c076dd039',
+      indexName: 'kt-vuepress'
     },
     locales: {
       '/': {
