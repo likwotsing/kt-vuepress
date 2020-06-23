@@ -7,11 +7,6 @@ module.exports = {
       lang: 'zh-CN',
       title: 'VuePress',
       description: 'Vue 驱动的静态网站生成器'
-    },
-    '/en/': {
-      lang: 'en-US',
-      title: 'VuePress',
-      description: 'Vue-powered Static Site Generator'
     }
   },
   head: [
@@ -47,16 +42,17 @@ module.exports = {
         selectText: '选择语言',
         editLinkText: '在Github 上编辑此页',
         lastUpdated: '上次更新',
-        nav: require('./nav/zh')
-      },
-      '/en/': {
-        label: 'English',
-        selectText: 'Languages',
-        ariaLabel: 'Select language',
-        editLinkText: 'Edit this page on GitHub',
-        lastUpdated: 'Last Updated',
-        nav: require('./nav/en'),
+        nav: require('./nav/zh'),
+        sidebar: {
+          '/zh/relation/': getRelationSidebar()
+        }
       }
     }
   }
+}
+
+function getRelationSidebar() {
+  return [
+    'webpack'
+  ]
 }
