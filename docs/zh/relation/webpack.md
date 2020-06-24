@@ -39,14 +39,6 @@ module.exports = {
 }
 ```
 
-## loader
-
-模块解析，模块转换器，用于把模块原内容按照需求转换成新内容。
-
-webpack是模块打包工具，而模块不仅仅是js，还可以是css，图片或者其他格式。
-
-webpack默认只知道如何处理js和JSON模块，那么其他格式的模块处理就需要loader了。
-
 ## module
 
 模块，在webpack里一切皆模块，一个模块对应着一个文件。webpack会从配置的entry开始递归找出所有依赖的模块。
@@ -65,6 +57,14 @@ module: {
     ]
 }
 ```
+
+## loader
+
+模块解析，模块转换器，用于把模块原内容按照需求转换成新内容。
+
+webpack是模块打包工具，而模块不仅仅是js，还可以是css，图片或者其他格式。
+
+webpack默认只知道如何处理js和JSON模块，那么其他格式的模块处理就需要loader了。
 
 ### file-loader
 
@@ -94,7 +94,7 @@ npm install url-loader -D
 }
 ```
 
-url-loader依赖file-loader，当使用url-loader加载图片，图片大小小于上限值，则将图片转成base64字符串，否则使用file-loader加载图片。
+>  url-loader依赖file-loader，当使用url-loader加载图片，图片大小小于上限值，则将图片转成base64字符串，否则使用file-loader加载图片。
 
 ### 样式处理
 
@@ -129,11 +129,28 @@ plugin可以在webpack运行到某个阶段的时候，帮你做一些事情，�
 npm install html-webpack-plugin -D
 ```
 
+```js
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+module.exports = {
+    plugins: [ new HtmlWebpackPlugin() ]
+}
+```
+
+
+
 ### clean-webpack-plugin
 
 [clean-webpack-plugin](https://www.npmjs.com/package/clean-webpack-plugin)会移除构建的文件夹
 
 ```js
 npm install clean-webpack-plugin -D
+```
+
+```js
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
+webpackConfig = {
+    plugins: [ new CleanWebpackPlugin() ]
+}
 ```
 

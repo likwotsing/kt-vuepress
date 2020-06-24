@@ -44,15 +44,23 @@ module.exports = {
         lastUpdated: '上次更新',
         nav: require('./nav/zh'),
         sidebar: {
-          '/zh/relation/': getRelationSidebar()
+          '/zh/relation/': getRelationSidebar('更多', '介绍')
         }
       }
     }
   }
 }
 
-function getRelationSidebar() {
+function getRelationSidebar(groupA, introductionA) {
   return [
-    'webpack'
+    {
+      title: groupA,
+      collapsable: false,
+      sidebarDepth: 2,
+      children: [
+        ['', introductionA],
+        'webpack'
+      ]
+    }
   ]
 }
