@@ -8,6 +8,10 @@ module.exports = [
     link: '/zh/git/'
   },
   {
+    text: 'JavaScript',
+    link: '/zh/javascript/'
+  },
+  {
     text: '相关',
     link: '/zh/relation/'
   },

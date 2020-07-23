@@ -5,7 +5,7 @@ module.exports = {
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: 'VuePress',
+      title: '黄桃罐头',
       description: 'Vue 驱动的静态网站生成器'
     }
   },
@@ -44,7 +44,8 @@ module.exports = {
         lastUpdated: '上次更新',
         nav: require('./nav/zh'),
         sidebar: {
-          '/zh/relation/': getRelationSidebar('更多', '介绍')
+          '/zh/relation/': getRelationSidebar('更多', '介绍'),
+          '/zh/javascript/': getJavaScriptSidebar('JavaScript')
         }
       }
     }
@@ -60,6 +61,20 @@ function getRelationSidebar(groupA, introductionA) {
       children: [
         ['', introductionA],
         'webpack'
+      ]
+    }
+  ]
+}
+
+function getJavaScriptSidebar(groupA) {
+  return [
+    {
+      title: groupA,
+      collapsable: false,
+      sidebarDepth: 3,
+      children: [
+        'event-delegation',
+        'closure'
       ]
     }
   ]

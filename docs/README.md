@@ -1,16 +1,16 @@
 ---
 home: true
-heroImage: /hero.png
-heroText: Hero 标题
-tagline: Hero 副标题
+heroImage: /ht.png
+heroText: Yellow Peach
+tagline: eat
 actionText: 快速上手 →
 actionLink: /zh/guide/
 features:
-- title: 简洁至上
-  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-- title: Vue驱动
-  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-- title: 高性能
-  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
+- title: 生津解渴
+  details: 从中医食疗的角度上来讲黄桃性味甘、酸、温，对于津伤所导致的口渴、口干、声音嘶哑有很好的生津解渴的作用。
+- title: 润肠通便
+  details: 对于肠燥便秘、排便困难的人，如果适当食用黄桃有很好的润肠通便的功效。
+- title: 滋补气血
+  details: 对于气血不足所导致的面色苍白的人，如果适当吃黄桃，通过滋补气血而达到美容养颜的作用。
 footer: MIT Licensed | Copyright © 2020-present
 ---
