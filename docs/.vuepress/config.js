@@ -60,7 +60,8 @@ function getRelationSidebar(groupA, introductionA) {
       sidebarDepth: 2,
       children: [
         ['', introductionA],
-        'webpack'
+        'webpack',
+        'package.json'
       ]
     }
   ]
