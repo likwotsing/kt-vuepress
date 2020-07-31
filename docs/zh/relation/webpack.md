@@ -7,6 +7,12 @@ Webpack是一个 打包模块化JavaScript的工具，它会从入口模块出�
 - [node](https://nodejs.org/en/)
 - [webpack](https://webpack.js.org/guides/getting-started/)
 
+```js
+npm install webpack webpack-cli --save-dev
+```
+
+
+
 > 全局安装webpack，将会使项目中的webpack锁定到指定版本，造成不同的项目中因为webpack依赖不同版本而导致冲突，构建失败，所以不建议全局安装
 
 ### 检查安装
@@ -892,3 +898,112 @@ use: [
 
 ## development/production模式区分打包
 
+利用`webpack-merge`，进行base、dev、pro文件的合并。
+
+```js
+// webpack.dev.config.js
+const merge = require('webpack-merge')
+const baseConfig = require('webpack.base.config.js')
+
+const devConfig = { 
+	// ...
+}
+module.exports = merge(baseConfig, devConfig)
+```
+
+基于环境变量区分：借助`cross-env`
+
+## webpack原理
+
+实现一个webpack_require来实现自己的模块化，把代码都缓存在installedModules里，代码文件以对象传递进来，key是路径，value是包裹的代码字符串，并且代码内部的require，都被替换成了webpack_require。
+
+执行`npx webpack`，读取配置文件，
+
+- entry，得到入口文件
+- 是否有依赖？递归实现依赖是否有依赖
+- 内容是什么？es6+ 转换成 es5
+- 处理后的chunk内容
+- 生成bundle文件
+
+过程：
+
+- 分析入口内容，处理成浏览器可用的
+- 递归处理所有依赖模块
+  - 引入路径
+  - 在项目里的路径
+- 生成bundle文件
+
+### 自己实现一个bundle.js
+
+- 模块分析：读取入口文件，分析代码
+
+  ```js
+  // bundle.js
+  const options = require('./webpack.config.js')
+  const Webpack = require('./lib/webpack.js')
+  new Webpack(options).run()
+  ```
+
+- 拿到入口文件中的依赖，不推荐使用字符串截取，引入的模块名越多，会越麻烦。推荐使用[@babel/parser](https://www.babeljs.cn/docs/babel-parser)的parse方法，这是babel7的工具，返回一个AST抽象语法树
+
+  ```js
+  //读取入口文件的内容
+  const content = fs.readFileSync(entryFile, "utf-8");
+  //! 分析内容 得到AST
+  const ast = parser.parse(content, {
+      sourceType: "module",
+  });
+  ```
+
+- 可以根据ast.program.body里的分析结果，遍历出所有的引入模块，推荐使用[@babel/traverse](https://www.babeljs.cn/docs/babel-traverse)，
+
+  ```js
+  traverse(ast, {
+      ImportDeclaration({ node }) {
+          //拿到模块依赖在项目中的路径
+          // ./a.js
+          // ./src/index.js
+          // path.dirname(entryFile);
+          const newPath =
+                "./" + path.join(path.dirname(entryFile), node.source.value);
+          yilai[node.source.value] = newPath;
+      },
+  });
+  ```
+
+- 把代码处理成浏览器可运行的代码，需要借助[@babel/core](https://www.babeljs.cn/docs/babel-core)和[@babel/preset-env](https://www.babeljs.cn/docs/babel-preset-env)，把ast语法树转换成合适的代码
+
+  ```js
+  // 处理内容 转换代码
+  const { code } = transformFromAst(ast, null, {
+      //处理成什么标准的代码？
+      presets: ["@babel/preset-env"],
+  });
+  ```
+
+- 分析依赖，把项目路所有的模块进行分析
+
+  ```js
+  //启动函数
+  const info = this.parse(this.entry); //./src/a||b.js
+  this.modules.push(info);
+  for (let i = 0; i < this.modules.length; i++) {
+      const item = this.modules[i];
+      const { yilai } = item;
+      if (yilai) {
+          for (let j in yilai) {
+              this.modules.push(this.parse(yilai[j]));
+          }
+      }
+  }
+  // 数组结构转换
+  const obj = {};
+  this.modules.forEach((item) => {
+      obj[item.entryFile] = {
+          yilai: item.yilai,
+          code: item.code,
+      };
+  });
+  ```
+
+  
