@@ -45,7 +45,8 @@ module.exports = {
         nav: require('./nav/zh'),
         sidebar: {
           '/zh/relation/': getRelationSidebar('更多', '介绍'),
-          '/zh/javascript/': getJavaScriptSidebar('JavaScript')
+          '/zh/javascript/': getJavaScriptSidebar('JavaScript'),
+          '/zh/wx/': getWxSidebar()
         }
       }
     }
@@ -78,5 +79,12 @@ function getJavaScriptSidebar(groupA) {
         'closure'
       ]
     }
+  ]
+}
+
+function getWxSidebar() {
+  return [
+    'gzh',
+    'xcx'
   ]
 }
