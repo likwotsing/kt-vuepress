@@ -1007,3 +1007,173 @@ module.exports = merge(baseConfig, devConfig)
   ```
 
   
+
+### 自定义loader
+
+[writing a loader](https://webpack.js.org/contribute/writing-a-loader/)
+
+[接口文档](https://webpack.js.org/api/loaders/)
+
+loader本质上就是一个函数，**声明式函数**，不能使用箭头函数，拿到源代码，作进一步的修饰处理，再返回处理后的源码就可以了。
+
+- loader是处理模块的，一定要有返回值
+- [this.query](https://www.webpackjs.com/api/loaders/#this-query)是传递的参数，webpack5推荐使用[loader-utils](https://webpack.js.org/api/loaders/#thisgetoptionsschema)
+- [this.callback](https://www.webpackjs.com/api/loaders/#this-callback)可以返回更多的结果
+- [this.async]([https://www.webpackjs.com/api/loaders/#%E5%BC%82%E6%AD%A5-loader](https://www.webpackjs.com/api/loaders/#异步-loader))处理异步
+  - this.async()返回的callback === this.callback
+- 使用[resolveLoader](https://www.webpackjs.com/configuration/resolve/#resolveloader)，可以不用使用path.resovle处理自定义loader的路径
+
+范例replaceLoader.js：
+
+```js
+// index.js
+console.log('hello webpack')
+```
+
+```js
+// replaceLoader.js
+const loaderUtils = require('loader-utils')
+
+module.exports = function(source) {
+  // console.log(source)
+  console.log(this.query)
+  const options = loaderUtils.getOptions(this)
+
+
+  return source.replace('自定义loader', options.name)
+}
+```
+
+```js
+// replaceLoaderAsync.js
+const loaderUtils = require('loader-utils')
+
+module.exports = function(source) {
+  // console.log(source)
+  // console.log(this.query)
+
+  // webpack5以上，推荐使用loader-utils
+  const options = loaderUtils.getOptions(this)
+  console.log(options)
+
+  // 同步使用callback返回
+  // const result = source.replace('webpack', options.name)
+  // this.callback(null, result)
+
+  // 异步使用async函数
+  const callback = this.async()
+  setTimeout(() => {
+    const result = source.replace('webpack', options.name)
+    callback(null, result)
+  }, 2000)
+}
+```
+
+```js
+// webpack.config.js
+const path = require('path')
+
+module.exports = {
+  mode: 'development',
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: 'bundle.js'
+  },
+  resolveLoader: { // 处理loader的寻找路径，不用再使用path.resolve进行处理
+    modules: ['node_modules', './src/myLoaders']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            // loader: path.resolve(__dirname, './src/myLoaders/replaceLoader.js'),
+            loader: 'replaceLoader',
+            options: {
+              name: '我的loader'
+            }
+          },
+          {
+            // loader: path.resolve(__dirname, './src/myLoaders/replaceLoaderAsync.js'),
+            loader: 'replaceLoaderAsync',
+            options: {
+              name: '自定义loader'
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+```js
+// 运行
+npx webpack
+```
+
+### 自定义wepack
+
+[文档](https://webpack.js.org/contribute/writing-a-plugin/)
+
+Plugin：开始执行打包后，在某个时刻，帮我们处理一些事情
+
+plugin要比loader稍微复杂一些，plugin是一个类，里面包含一个apply函数，接收一个参数，compiler
+
+范例copyright-webpack-plugin：
+
+```js
+// copyright-webpack-plugin
+class CopyrightWebpackPlugin {
+  constructor(options) {
+    // 接收参数
+    console.log(options)
+  }
+
+  // compiler: webpack实例
+  apply(compiler) {
+    // hooks.emit 在某个时刻触发
+    compiler.hooks.emit.tapAsync(
+      'CopyrightWebpackPlugin',
+      (compilation, cb) => {
+        var filelist = 'This is a new txt.\n\n'
+        for (var filename in compilation.assets) {
+          filelist += '- ' + filename + '\n'
+        }
+
+        compilation.assets['copyright.txt'] = {
+          source: function() {
+            // return filelist
+            return 'this is a new txt.'
+          },
+          size: function() {
+            return filelist.length
+          }
+        }
+        cb()
+      }
+    )
+
+    // 同步的写法
+    // compiler.hooks.compile.tap('CopyrightWebpackPlugin', compilation => {
+    //   console.log('自定义plugin执行了一些事情')
+    // })
+  }
+}
+
+module.exports = CopyrightWebpackPlugin
+```
+
+```js
+// webpack.config.js
+const CopyrightWebpackPlugin = require('./src/myPlugins/copyright-webpack-plugin')
+
+plugins: [new CopyrightWebpackPlugin({
+    name: '我的plugin'
+})]
+```
+
+
+
