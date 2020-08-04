@@ -5,11 +5,15 @@ module.exports = [
   },
   {
     text: 'Git',
-    link: '/zh/git/'
+    link: '/zh/git/index.md'
   },
   {
     text: 'JavaScript',
     link: '/zh/javascript/'
+  },
+  {
+    text: 'Node',
+    link: '/zh/node/'
   },
   {
     text: '相关',
