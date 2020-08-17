@@ -46,7 +46,8 @@ module.exports = {
         sidebar: {
           '/zh/relation/': getRelationSidebar('更多', '介绍'),
           '/zh/javascript/': getJavaScriptSidebar('JavaScript'),
-          '/zh/wx/': getWxSidebar()
+          '/zh/wx/': getWxSidebar(),
+          '/zh/interest/': getInterestBar()
         }
       }
     }
@@ -86,5 +87,11 @@ function getWxSidebar() {
   return [
     'gzh',
     'xcx'
+  ]
+}
+
+function getInterestBar() {
+  return [
+    'id'
   ]
 }

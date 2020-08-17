@@ -34,6 +34,15 @@ module.exports = [
             link: '/zh/wx/xcx.md'
           }
         ]
+      },
+      {
+        text: '感兴趣',
+        items: [
+          {
+            text: '身份号码',
+            link: '/zh/interest/id.md'
+          }
+        ]
       }
     ]
   },

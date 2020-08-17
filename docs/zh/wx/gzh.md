@@ -87,14 +87,28 @@ node index.js
 
 ![你问我答](/assets/wx/niwenwoda.png)
 
-[npm库](https://github.com/node-webot/co-wechat)
-
 [开通公众号测试账号](https://mp.weixin.qq.com/)：开发 -> 开发者工具 -> 公众平台测试账号
 
-编写配置文件：
+[项目代码](https://github.com/likwotsing/kt-wx)
 
-```js
-// conf.js
+- ./src/index.js：实现后端接口
 
-```
+- ./src/source.js：源代码实现微信的签名验证
 
+  > 验证是：我们自己的服务器验证微信的服务器，把验证代码注释掉，在微信网站的[接口配置](https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index)里也可以通过，说明没有这个签名验证，微信也能使用，但为了安全，其他服务器调用我们的服务器时，需要添加这个验证，如果不是微信服务器调用我们服务器的接口，那就不作进一步处理。
+
+- ./src/conf.js：微信的后端配置
+
+- ./src/sunny-ngrok/：内网映射到外网
+
+- ./src/mongoose.js：票据持久存储，可以使用navicat premium访问mongodb
+
+  > [mongodb](https://www.runoob.com/mongodb/mongodb-window-install.html)，使用命令行的方式启动mongob即可，然后使用navicat premium连接
+
+[co-wechat](https://www.npmjs.com/package/co-wechat)：微信公众平台消息接口服务中间件
+
+[co-wechat-api](https://www.npmjs.com/package/co-wechat-api)：微信公共平台API，可以直接使用，[对应的api文档](https://doxmate.cool/node-webot/co-wechat-api/api.html)
+
+> 使用该模块后，就不用在每个接口里每次都验证签名信息，调用该模块，在new一个实例的时候把appid和appsecret传入一次即可
+
+[crypoty](https://www.liaoxuefeng.com/wiki/1022910821149312/1023025778520640)：Node.js可以调用的加密模块
