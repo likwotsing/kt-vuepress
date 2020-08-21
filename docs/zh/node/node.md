@@ -1,8 +1,3 @@
----
-sidebarDepth: 2
-sidebar: auto
----
-
 # Node
 
 [node中文文档](https://www.npmjs.cn/)

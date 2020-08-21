@@ -47,7 +47,8 @@ module.exports = {
           '/zh/relation/': getRelationSidebar('更多', '介绍'),
           '/zh/javascript/': getJavaScriptSidebar('JavaScript'),
           '/zh/wx/': getWxSidebar(),
-          '/zh/interest/': getInterestBar()
+          '/zh/interest/': getInterestBar(),
+          '/zh/node/': getNodeBar('Node', '介绍')
         }
       }
     }
@@ -93,5 +94,20 @@ function getWxSidebar() {
 function getInterestBar() {
   return [
     'id'
+  ]
+}
+
+function getNodeBar(groupA, introductionA) {
+  return [
+    {
+      title: groupA,
+      collapsable: false,
+      sidebarDepth: 3,
+      children: [
+        ['', introductionA],
+        'node',
+        'node-tool'
+      ]
+    }
   ]
 }
