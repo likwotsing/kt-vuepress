@@ -106,7 +106,8 @@ function getNodeBar(groupA, introductionA) {
       children: [
         ['', introductionA],
         'node',
-        'node-tool'
+        'node-tool',
+        'http'
       ]
     }
   ]
