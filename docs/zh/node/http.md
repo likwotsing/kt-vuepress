@@ -36,6 +36,27 @@ http.createServer((req, res) => {
     `)
   } else if (url === '/main.js') {
     const content = `document.writeln('<br />js updatetime is: ${updateTime()}')`
+    // 强缓存
+    // res.setHeader('Expires', new Date(Date.now() + 10 * 1000).toUTCString())
+    // res.setHeader('Cache-Control', 'max-age=5')
+    // 协商缓存
+    res.setHeader('Cache-Control', 'no-cache')
+    // res.setHeader('Last-Modified', new Date().toUTCString())
+    // if (new Date(req.headers['if-modified-since']).getTime() + 3 * 1000 > Date.now()) {
+    //   console.log('协商缓存命中...')
+    //   res.statusCode = 304
+    //   res.end()
+    //   return
+    // }
+    const crypto = require('crypto')
+    const hash = crypto.createHash('sha1').update(content).digest('hex')
+    res.setHeader('etag', hash)
+    if (req.headers['if-none-match'] === hash) {
+      console.log('etag 缓存命中...')
+      res.statusCode = 304
+      res.end()
+      return
+    }
     res.statusCode = 200
     res.end(content)
   } else if (url === '/favicon.ico') {
@@ -47,7 +68,11 @@ http.createServer((req, res) => {
 
 ```
 
+[http message.headers](http://nodejs.cn/api/http.html#http_message_headers)
 
+[http2 message.headers](https://nodejs.org/dist/latest-v12.x/docs/api/http2.html#http2_headers_object)
+
+- node里的headers都是**小写**，如`if-none-match`
 
 ## 强缓存策略
 
@@ -78,7 +103,7 @@ expires: Mon, 24 Aug 2020 06:55:26 GMT
 
 #### cache-control
 
-HTTP1.1新增了[cache-control](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Cache-Control)字段来解决`expires`存在的问题，当`cache-control`和`expires`都存在时，`cache-control`的优先级更高。该字段是一个时间长度，单位秒，表示该资源经过多少秒后失效。当客户端请求资源的时候，发现该资源还在有效时间内则使用该缓存，它**不依赖客户端时间**。`cache-control`主要有`max-age`和`s-maxage`、`public`和`private`、`no-cache`和`no-store`等值。
+HTTP1.1新增了[cache-control](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Cache-Control)字段来解决`expires`存在的问题，**当`cache-control`和`expires`都存在时，`cache-control`的优先级更高**。该字段是一个时间长度，单位秒，表示该资源经过多少秒后失效。当客户端请求资源的时候，发现该资源还在有效时间内则使用该缓存，它**不依赖客户端时间**。`cache-control`主要有`max-age`和`s-maxage`、`public`和`private`、`no-cache`和`no-store`等值。
 
 ##### 可缓存性
 
@@ -112,11 +137,21 @@ HTTP1.1新增了[cache-control](https://developer.mozilla.org/zh-CN/docs/Web/HTT
 
 ### last-modified & if-Modified-Since
 
+通过协商修改时间为基础的策略。
+
+- if-modified-since：只可以用在GET和HEAD请求中
+
+![last-modified](/assets/img/last-modified.png)
+
 ### etag & if-None-Match
 
 通过内容判断，一般的做法是将返回内容进行摘要(Hash)，然后通过对比摘要来判断内容是否更新。
 
+- `if-none-match`是在http2的模块里
+- if-none-match和if-match的区别：if-match是**强比较算法**，只有在每一个字节相同的情况下，才认为两个文件是相同的。if-none-match是**弱比较算法**，内容一致也可以认为是相同的。
+- if-none-match比if-modified-since的优先级高
 
+![etag](/assets/img/etag.png)
 
 ## AJAX缓存
 
