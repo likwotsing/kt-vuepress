@@ -108,7 +108,8 @@ function getNodeBar(groupA, introductionA) {
         ['', introductionA],
         'node',
         'node-tool',
-        'http'
+        'http',
+        'crawler'
       ]
     }
   ]

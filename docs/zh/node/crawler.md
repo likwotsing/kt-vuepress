@@ -24,15 +24,15 @@ function request(url, cb) {
 for (let i = 101705; i < 101710; i++) {
   const url = `https://www.dy2018.com/i/${i}.html`
   // request(url, (err, res, body) => {
-  //   const html = iconv.decode(body, 'gb2312') // 网页的charset是gb2312
+  //   const html = iconv.decode(body, 'gb2312')
   //   const $ = cheerio.load(html)
   //   console.log($('.title_all h1').text())
   // })
   https.get(`https://www.dy2018.com/i/${i}.html`, res => {
     res.on('data', (d) => {
-      const html = iconv.decode(d, 'gb2312')
+      const html = iconv.decode(d, 'gb2312') // 网页的charset是gb2312
       const $ = cheerio.load(html)
-      console.log($('.title_all h1').text())
+      console.log($('.title_all h1').text()) // 把电影标题打印出来
       // process.stdout.write(d);
     });
   })
