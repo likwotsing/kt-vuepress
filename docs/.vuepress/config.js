@@ -49,7 +49,8 @@ module.exports = {
           '/zh/javascript/': getJavaScriptSidebar('JavaScript'),
           '/zh/wx/': getWxSidebar(),
           '/zh/interest/': getInterestBar(),
-          '/zh/node/': getNodeBar('Node', '介绍')
+          '/zh/node/': getNodeBar('Node', '介绍'),
+          '/zh/explore/': getExploreBar('探索', '说明')
         }
       }
     }
@@ -112,6 +113,20 @@ function getNodeBar(groupA, introductionA) {
         'crawler',
         'typescript',
         'login'
+      ]
+    }
+  ]
+}
+
+function getExploreBar(groupA, introductionA) {
+  return [
+    {
+      title: groupA,
+      collapsable: false,
+      sidebarDepth: 3,
+      children: [
+        ['', introductionA],
+        'flutter'
       ]
     }
   ]

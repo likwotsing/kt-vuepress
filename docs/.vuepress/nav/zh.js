@@ -16,6 +16,10 @@ module.exports = [
     link: '/zh/node/'
   },
   {
+    text: '探索',
+    link: '/zh/explore/'
+  },
+  {
     text: '相关',
     link: '/zh/relation/'
   },
