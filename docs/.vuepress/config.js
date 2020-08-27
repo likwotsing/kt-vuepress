@@ -110,7 +110,8 @@ function getNodeBar(groupA, introductionA) {
         'node-tool',
         'http',
         'crawler',
-        'typescript'
+        'typescript',
+        'login'
       ]
     }
   ]
