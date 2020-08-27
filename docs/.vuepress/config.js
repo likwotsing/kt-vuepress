@@ -5,8 +5,8 @@ module.exports = {
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: '黄桃罐头',
-      description: 'Vue 驱动的静态网站生成器'
+      title: '前端园地',
+      description: '前端知识点汇总'
     }
   },
   head: [
