@@ -1,5 +1,78 @@
 # Webpack
 
+## grunt/gulp/webpack
+
+### grunt
+
+[grunt](https://www.gruntjs.net/getting-started)通过JavaScript语法实现了shell script命令的功能。如使用`jshint`(语法和风格检查，不检查逻辑错误)，原来需要手动在命令行输入`jshint test.js`，通过grunt可以配置命令：
+
+```js
+// Gruntfile.js
+module.exports = function(grunt) {
+    grunt.initConfig({
+        jshint: {
+            src: 'src/test.js'
+        }
+    });
+    // 默认被执行的任务列表
+    grunt.registerTask('default', ['jshint'])
+}
+```
+
+### gulp
+
+[gulp](https://www.gulpjs.com.cn/docs/getting-started/quick-start/)吸取了grunt的优点，拥有更简便的写法，通过流(stream)来简化多任务之间的配置和输出。
+
+```js
+// gulpfile.js
+var gulp = require('gulp')
+var jshint = require('gulp-jshint')
+var uglify = require('gulp-uglify')
+// 使用pipe，用流的方式直接往下传递
+gulp.task('lint', function() {
+    return gulp.src('src/test.js')
+    	.pipe(jshint()) 
+    	.pipe(jshint.reporter('default'))
+})
+gulp.task('compress', function() {
+    return gulp.src('src/test.js')
+    	.pipe(uglify())
+    	.pipe(gulp.dest('build'))
+})
+// 将代码检查和压缩组合，新建一个任务
+gulp.task('default', ['lint', 'compress'])
+```
+
+### browserify
+
+早期的模块打包工具，使浏览器可以使用CommonJS规范(require,module.exprt)的格式组织代码。
+
+```js
+// add.js
+module.exports = function(a, b) {
+    return a + b
+}
+// test.js
+var add = require('./add.js')
+console.log(add(1, 2))
+```
+
+使用browserify生成浏览器可识别的代码：
+
+```js
+browserify test.js > bundle.js
+```
+
+
+
+### webpack
+
+grunt和gulp是流管理工具，通过一个个task配置执行用户需要的功能，如格式检验、代码压缩，经过处理后的代码只是局部变量名被替换简化，整体并没有发生改变。
+
+webpack更加偏向对模块语法规则进行转换。将原本浏览器不能识别的语法、各种静态文件进行分析，压缩，合并，打包，最后生成浏览器支持的代码。webpack打包后的代码已经不是原来写的代码。
+
+webpack通过loader机制解析各种模块，通过plugin机制添加一些辅助功能。
+
 Webpack是一个 打包模块化JavaScript的工具，它会从入口模块出发，识别出源码中的模块化导入语句，递归地找出入口文件的所有依赖，将入口和其所有的依赖打包到一个单独的文件中。
 
 ## 安装

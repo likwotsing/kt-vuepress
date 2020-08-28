@@ -31,5 +31,43 @@ app.use('/login', myMiddleware);
 app.get('/', myMiddleware);
 ```
 
-## 托管静态文件
+### static托管静态文件
+
+使用`express.static`中间件类托管静态文件，如图片、CSS、js文件。
+
+```js
+app.use(express.static('public')) // 托管public文件夹中的文件
+```
+
+通过多次调用`static`来托管多个文件，按调用顺序查找：
+
+```js
+app.use(express.static('public'))
+app.use(express.static('media'))
+```
+
+可以创建一个装载路径：
+
+```js
+// 可以通过/media前缀访问public里的文件
+// 如: http://localhost:3000/media/images/log.png
+app.use('/media', express.static('public'))
+```
+
+### 错误处理
+
+处理错误的特殊中间件函数有4个参数(err, req, res, next)，而不是3个。
+
+```js
+app.use((err, req, res, next) => {
+    console.log(err.stack)
+    res.status(500).send('出错了')
+})
+```
+
+错误处理中间件可以处理任何内容，但是必须在所有其它`app.use()`和路由调用后才能使用，错误处理中间件是需求处理过程中最后的中间件。
+
+## 渲染数据
+
+模板引擎为输出文档的结构指定一个模板，在数据处先放置占位符，并在页面生成时填充。
 
