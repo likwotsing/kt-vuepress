@@ -112,7 +112,8 @@ function getNodeBar(groupA, introductionA) {
         'http',
         'crawler',
         'typescript',
-        'login'
+        'login',
+        'express'
       ]
     }
   ]
