@@ -5,7 +5,7 @@ module.exports = {
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: '前端园地',
+      title: '前端知识',
       description: '前端知识点汇总'
     }
   },

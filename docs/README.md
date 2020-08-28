@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /ht.png
-heroText: Front-end Garden
+heroText: Front-end Knowledge
 tagline: study
 actionText: Git →
 actionLink: /zh/git/
