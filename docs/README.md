@@ -3,8 +3,8 @@ home: true
 heroImage: /ht.png
 heroText: Front-end Knowledge
 tagline: study
-actionText: Git →
-actionLink: /zh/git/
+actionText: 探索 →
+actionLink: /zh/explore/
 # features:
 # - title: 知耻后勇
 #   details: 不怕学问浅，就怕志气短。

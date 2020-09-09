@@ -50,7 +50,8 @@ module.exports = {
           '/zh/wx/': getWxSidebar(),
           '/zh/interest/': getInterestBar(),
           '/zh/node/': getNodeBar('Node', '介绍'),
-          '/zh/explore/': getExploreBar('探索', '说明')
+          '/zh/explore/': getExploreBar('探索', '说明'),
+          '/zh/server/': getServerBar('Server', '介绍')
         }
       }
     }
@@ -128,6 +129,22 @@ function getExploreBar(groupA, introductionA) {
       children: [
         ['', introductionA],
         'flutter'
+      ]
+    }
+  ]
+}
+
+
+function getServerBar(groupA, introductionA) {
+  return [
+    {
+      title: groupA,
+      collapsable: false,
+      sidebarDepth: 3,
+      children: [
+        ['', introductionA],
+        'git',
+        'linux'
       ]
     }
   ]

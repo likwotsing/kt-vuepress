@@ -1,8 +1,3 @@
----
-sidebarDepth: 3
-sidebar: auto
----
-
 # Git
 
 ## 配置Git

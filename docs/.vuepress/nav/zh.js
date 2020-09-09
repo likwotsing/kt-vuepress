@@ -4,8 +4,8 @@ module.exports = [
     link: '/'
   },
   {
-    text: 'Git',
-    link: '/zh/git/index.md'
+    text: 'Sever',
+    link: '/zh/server/'
   },
   {
     text: 'JavaScript',
