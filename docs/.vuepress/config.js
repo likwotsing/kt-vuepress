@@ -81,7 +81,8 @@ function getJavaScriptSidebar(groupA) {
       sidebarDepth: 3,
       children: [
         'event-delegation',
-        'closure'
+        'closure',
+        'event-loop'
       ]
     }
   ]
