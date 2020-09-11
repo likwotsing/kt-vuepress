@@ -13,7 +13,7 @@
 
   - 为啥不会再添加mutation了呢？[参考](https://dom.spec.whatwg.org/#queue-a-mutation-record)的第一条，*interestedObservers*是一个[map](https://infra.spec.whatwg.org/#ordered-map)
 
-  - 如果需要多个mutation，那就
+  - 如果需要多个mutation，那就新new一个MutationObserver，再挂到dom元素上：
 
     ```js
     const elementToObserve = document.querySelector("#targetElementId");

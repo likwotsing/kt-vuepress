@@ -82,7 +82,8 @@ function getJavaScriptSidebar(groupA) {
       children: [
         'event-delegation',
         'closure',
-        'event-loop'
+        'event-loop',
+        'html2canvas'
       ]
     }
   ]
