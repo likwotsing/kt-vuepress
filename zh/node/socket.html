@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Socket | 前端知识</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/kt-vuepress/favicon.ico">
+    <meta name="description" content="前端知识点汇总">
+    <link rel="preload" href="/kt-vuepress/assets/css/0.styles.008cb6a5.css" as="style"><link rel="preload" href="/kt-vuepress/assets/js/app.ed2bf4cb.js" as="script"><link rel="preload" href="/kt-vuepress/assets/js/2.90c87c0b.js" as="script"><link rel="preload" href="/kt-vuepress/assets/js/23.229d8b3b.js" as="script"><link rel="prefetch" href="/kt-vuepress/assets/js/10.bc474c2c.js"><link rel="prefetch" href="/kt-vuepress/assets/js/11.baaedd31.js"><link rel="prefetch" href="/kt-vuepress/assets/js/12.b7202efa.js"><link rel="prefetch" href="/kt-vuepress/assets/js/13.185f35f5.js"><link rel="prefetch" href="/kt-vuepress/assets/js/14.941cc136.js"><link rel="prefetch" href="/kt-vuepress/assets/js/15.7cbd78cd.js"><link rel="prefetch" href="/kt-vuepress/assets/js/16.c57856a1.js"><link rel="prefetch" href="/kt-vuepress/assets/js/17.9757842d.js"><link rel="prefetch" href="/kt-vuepress/assets/js/18.ee37bb82.js"><link rel="prefetch" href="/kt-vuepress/assets/js/19.dd52f1c3.js"><link rel="prefetch" href="/kt-vuepress/assets/js/20.5a6d09eb.js"><link rel="prefetch" href="/kt-vuepress/assets/js/21.c0064c9d.js"><link rel="prefetch" href="/kt-vuepress/assets/js/22.fe268a2c.js"><link rel="prefetch" href="/kt-vuepress/assets/js/24.e8022dff.js"><link rel="prefetch" href="/kt-vuepress/assets/js/25.7e23b398.js"><link rel="prefetch" href="/kt-vuepress/assets/js/26.2c431f60.js"><link rel="prefetch" href="/kt-vuepress/assets/js/27.b27e3ad7.js"><link rel="prefetch" href="/kt-vuepress/assets/js/28.2833b8d3.js"><link rel="prefetch" href="/kt-vuepress/assets/js/29.00d7e7b5.js"><link rel="prefetch" href="/kt-vuepress/assets/js/3.468495df.js"><link rel="prefetch" href="/kt-vuepress/assets/js/30.f2c128be.js"><link rel="prefetch" href="/kt-vuepress/assets/js/31.e305f032.js"><link rel="prefetch" href="/kt-vuepress/assets/js/32.13554f83.js"><link rel="prefetch" href="/kt-vuepress/assets/js/33.bafe657c.js"><link rel="prefetch" href="/kt-vuepress/assets/js/4.44d64a9c.js"><link rel="prefetch" href="/kt-vuepress/assets/js/5.e59dee5d.js"><link rel="prefetch" href="/kt-vuepress/assets/js/6.4277a135.js"><link rel="prefetch" href="/kt-vuepress/assets/js/7.b1b6eba7.js"><link rel="prefetch" href="/kt-vuepress/assets/js/8.810bce6f.js"><link rel="prefetch" href="/kt-vuepress/assets/js/9.6b0f248e.js">
+    <link rel="stylesheet" href="/kt-vuepress/assets/css/0.styles.008cb6a5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/kt-vuepress/" class="home-link router-link-active"><img src="/kt-vuepress/assets/img/logo.png" alt="前端知识" class="logo"> <span class="site-name can-hide">前端知识</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/kt-vuepress/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/server/" class="nav-link">
+  Sever
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/javascript/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/node/" class="nav-link router-link-active">
+  Node
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/explore/" class="nav-link">
+  探索
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/relation/" class="nav-link">
+  相关
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="了解更多" class="dropdown-title"><span class="title">了解更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          微信
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/kt-vuepress/zh/wx/gzh.html" class="nav-link">
+  公众号
+</a></li><li class="dropdown-subitem"><a href="/kt-vuepress/zh/wx/xcx.html" class="nav-link">
+  小程序
+</a></li></ul></li><li class="dropdown-item"><h4>
+          感兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/kt-vuepress/zh/interest/id.html" class="nav-link">
+  身份号码
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/vuejs/vuepress/blob/master/packages/docs/docs/.vuepress/nav/zh.js" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  参考
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/kt-vuepress/zh/other/" class="nav-link">
+  其他
+</a></div> <a href="https://github.com/likwotsing/kt-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/kt-vuepress/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/server/" class="nav-link">
+  Sever
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/javascript/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/node/" class="nav-link router-link-active">
+  Node
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/explore/" class="nav-link">
+  探索
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/relation/" class="nav-link">
+  相关
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="了解更多" class="dropdown-title"><span class="title">了解更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          微信
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/kt-vuepress/zh/wx/gzh.html" class="nav-link">
+  公众号
+</a></li><li class="dropdown-subitem"><a href="/kt-vuepress/zh/wx/xcx.html" class="nav-link">
+  小程序
+</a></li></ul></li><li class="dropdown-item"><h4>
+          感兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/kt-vuepress/zh/interest/id.html" class="nav-link">
+  身份号码
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/vuejs/vuepress/blob/master/packages/docs/docs/.vuepress/nav/zh.js" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  参考
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/kt-vuepress/zh/other/" class="nav-link">
+  其他
+</a></div> <a href="https://github.com/likwotsing/kt-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Node</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/kt-vuepress/zh/node/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/kt-vuepress/zh/node/node.html" class="sidebar-link">Node</a></li><li><a href="/kt-vuepress/zh/node/node-tool.html" class="sidebar-link">Node相关工具</a></li><li><a href="/kt-vuepress/zh/node/http.html" class="sidebar-link">HTTP缓存</a></li><li><a href="/kt-vuepress/zh/node/crawler.html" class="sidebar-link">Crawler</a></li><li><a href="/kt-vuepress/zh/node/typescript.html" class="sidebar-link">TypeScript</a></li><li><a href="/kt-vuepress/zh/node/login.html" class="sidebar-link">登录</a></li><li><a href="/kt-vuepress/zh/node/express.html" class="sidebar-link">Express</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="socket"><a href="#socket" class="header-anchor">#</a> Socket</h1> <p>简易聊天室，参考：<a href="https://www.npmjs.com/package/socket.io#how-to-use" target="_blank" rel="noopener noreferrer">socket.io<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- index.html --&gt;</span>
+<span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>socket<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">*</span> <span class="token punctuation">{</span>
+      <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+      <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+      <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">form</span> <span class="token punctuation">{</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
+      <span class="token property">padding</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+      <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
+      <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">form input</span> <span class="token punctuation">{</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> 90%<span class="token punctuation">;</span>
+      <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">form button</span> <span class="token punctuation">{</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> 10%<span class="token punctuation">;</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span> #409eff<span class="token punctuation">;</span>
+      <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">#messages</span> <span class="token punctuation">{</span>
+      <span class="token property">list-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">#messages li</span> <span class="token punctuation">{</span>
+      <span class="token property">padding</span><span class="token punctuation">:</span> 5px 10px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">#messages li:nth-child(odd)</span> <span class="token punctuation">{</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>messages<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ipt<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>Send<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://cdn.bootcdn.net/ajax/libs/socket.io/2.3.0/socket.io.dev.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> socket <span class="token operator">=</span> <span class="token function">io</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'form'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 阻止表单默认行为</span>
+        socket<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'chat message'</span><span class="token punctuation">,</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#ipt'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#ipt'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      <span class="token comment">// 接收别人发送的消息</span>
+      socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'chat message'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#messages'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'&lt;li&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// server.js</span>
+<span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Server</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span>
+<span class="token keyword">var</span> io <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'socket.io'</span><span class="token punctuation">)</span><span class="token punctuation">(</span>http<span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">sendFile</span><span class="token punctuation">(</span>__dirname <span class="token operator">+</span> <span class="token string">'/index.html'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+io<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'connection'</span><span class="token punctuation">,</span> <span class="token parameter">client</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'user connect...'</span><span class="token punctuation">)</span>
+  <span class="token comment">// 响应用户发送的信息</span>
+  client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'chat message'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'chat massage:'</span> <span class="token operator">+</span> msg<span class="token punctuation">)</span>
+    <span class="token comment">// 广播给其他人</span>
+    io<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'chat message'</span><span class="token punctuation">,</span> msg<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'disconnect'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'user disconnect...'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+http<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Server running at http://localhost:3000'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li>运行server.js，<code>node server.js</code></li> <li>浏览器打开<code>http://localhost:3000</code>，多开几个窗口</li> <li>在不同窗口输入信息，观察浏览器、node控制台的输出</li></ul></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/likwotsing/kt-vuepress/edit/master/docs/zh/node/socket.md" target="_blank" rel="noopener noreferrer">在Github 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">17 天前</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/kt-vuepress/assets/js/app.ed2bf4cb.js" defer></script><script src="/kt-vuepress/assets/js/2.90c87c0b.js" defer></script><script src="/kt-vuepress/assets/js/23.229d8b3b.js" defer></script>
+  </body>
+</html>

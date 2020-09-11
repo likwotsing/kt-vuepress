@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Event | 前端知识</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/kt-vuepress/favicon.ico">
+    <meta name="description" content="前端知识点汇总">
+    <link rel="preload" href="/kt-vuepress/assets/css/0.styles.008cb6a5.css" as="style"><link rel="preload" href="/kt-vuepress/assets/js/app.ed2bf4cb.js" as="script"><link rel="preload" href="/kt-vuepress/assets/js/2.90c87c0b.js" as="script"><link rel="preload" href="/kt-vuepress/assets/js/13.185f35f5.js" as="script"><link rel="prefetch" href="/kt-vuepress/assets/js/10.bc474c2c.js"><link rel="prefetch" href="/kt-vuepress/assets/js/11.baaedd31.js"><link rel="prefetch" href="/kt-vuepress/assets/js/12.b7202efa.js"><link rel="prefetch" href="/kt-vuepress/assets/js/14.941cc136.js"><link rel="prefetch" href="/kt-vuepress/assets/js/15.7cbd78cd.js"><link rel="prefetch" href="/kt-vuepress/assets/js/16.c57856a1.js"><link rel="prefetch" href="/kt-vuepress/assets/js/17.9757842d.js"><link rel="prefetch" href="/kt-vuepress/assets/js/18.ee37bb82.js"><link rel="prefetch" href="/kt-vuepress/assets/js/19.dd52f1c3.js"><link rel="prefetch" href="/kt-vuepress/assets/js/20.5a6d09eb.js"><link rel="prefetch" href="/kt-vuepress/assets/js/21.c0064c9d.js"><link rel="prefetch" href="/kt-vuepress/assets/js/22.fe268a2c.js"><link rel="prefetch" href="/kt-vuepress/assets/js/23.229d8b3b.js"><link rel="prefetch" href="/kt-vuepress/assets/js/24.e8022dff.js"><link rel="prefetch" href="/kt-vuepress/assets/js/25.7e23b398.js"><link rel="prefetch" href="/kt-vuepress/assets/js/26.2c431f60.js"><link rel="prefetch" href="/kt-vuepress/assets/js/27.b27e3ad7.js"><link rel="prefetch" href="/kt-vuepress/assets/js/28.2833b8d3.js"><link rel="prefetch" href="/kt-vuepress/assets/js/29.00d7e7b5.js"><link rel="prefetch" href="/kt-vuepress/assets/js/3.468495df.js"><link rel="prefetch" href="/kt-vuepress/assets/js/30.f2c128be.js"><link rel="prefetch" href="/kt-vuepress/assets/js/31.e305f032.js"><link rel="prefetch" href="/kt-vuepress/assets/js/32.13554f83.js"><link rel="prefetch" href="/kt-vuepress/assets/js/33.bafe657c.js"><link rel="prefetch" href="/kt-vuepress/assets/js/4.44d64a9c.js"><link rel="prefetch" href="/kt-vuepress/assets/js/5.e59dee5d.js"><link rel="prefetch" href="/kt-vuepress/assets/js/6.4277a135.js"><link rel="prefetch" href="/kt-vuepress/assets/js/7.b1b6eba7.js"><link rel="prefetch" href="/kt-vuepress/assets/js/8.810bce6f.js"><link rel="prefetch" href="/kt-vuepress/assets/js/9.6b0f248e.js">
+    <link rel="stylesheet" href="/kt-vuepress/assets/css/0.styles.008cb6a5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/kt-vuepress/" class="home-link router-link-active"><img src="/kt-vuepress/assets/img/logo.png" alt="前端知识" class="logo"> <span class="site-name can-hide">前端知识</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/kt-vuepress/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/server/" class="nav-link">
+  Sever
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/javascript/" class="nav-link router-link-active">
+  JavaScript
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/explore/" class="nav-link">
+  探索
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/relation/" class="nav-link">
+  相关
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="了解更多" class="dropdown-title"><span class="title">了解更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          微信
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/kt-vuepress/zh/wx/gzh.html" class="nav-link">
+  公众号
+</a></li><li class="dropdown-subitem"><a href="/kt-vuepress/zh/wx/xcx.html" class="nav-link">
+  小程序
+</a></li></ul></li><li class="dropdown-item"><h4>
+          感兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/kt-vuepress/zh/interest/id.html" class="nav-link">
+  身份号码
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/vuejs/vuepress/blob/master/packages/docs/docs/.vuepress/nav/zh.js" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  参考
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/kt-vuepress/zh/other/" class="nav-link">
+  其他
+</a></div> <a href="https://github.com/likwotsing/kt-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/kt-vuepress/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/server/" class="nav-link">
+  Sever
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/javascript/" class="nav-link router-link-active">
+  JavaScript
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/explore/" class="nav-link">
+  探索
+</a></div><div class="nav-item"><a href="/kt-vuepress/zh/relation/" class="nav-link">
+  相关
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="了解更多" class="dropdown-title"><span class="title">了解更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          微信
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/kt-vuepress/zh/wx/gzh.html" class="nav-link">
+  公众号
+</a></li><li class="dropdown-subitem"><a href="/kt-vuepress/zh/wx/xcx.html" class="nav-link">
+  小程序
+</a></li></ul></li><li class="dropdown-item"><h4>
+          感兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/kt-vuepress/zh/interest/id.html" class="nav-link">
+  身份号码
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/vuejs/vuepress/blob/master/packages/docs/docs/.vuepress/nav/zh.js" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  参考
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/kt-vuepress/zh/other/" class="nav-link">
+  其他
+</a></div> <a href="https://github.com/likwotsing/kt-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/kt-vuepress/zh/javascript/event-delegation.html" aria-current="page" class="active sidebar-link">Event</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/kt-vuepress/zh/javascript/event-delegation.html#事件委托" class="sidebar-link">事件委托</a></li><li class="sidebar-sub-header"><a href="/kt-vuepress/zh/javascript/event-delegation.html#节流与防抖" class="sidebar-link">节流与防抖</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/kt-vuepress/zh/javascript/event-delegation.html#节流-throttle" class="sidebar-link">节流(Throttle)</a></li><li class="sidebar-sub-header"><a href="/kt-vuepress/zh/javascript/event-delegation.html#防抖-debounce" class="sidebar-link">防抖(Debounce)</a></li><li class="sidebar-sub-header"><a href="/kt-vuepress/zh/javascript/event-delegation.html#用throttle来优化debounce" class="sidebar-link">用Throttle来优化Debounce</a></li></ul></li></ul></li><li><a href="/kt-vuepress/zh/javascript/closure.html" class="sidebar-link">closure</a></li><li><a href="/kt-vuepress/zh/javascript/event-loop.html" class="sidebar-link">event-loop</a></li><li><a href="/kt-vuepress/zh/javascript/html2canvas.html" class="sidebar-link">html2canvas</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="event"><a href="#event" class="header-anchor">#</a> Event</h1> <h2 id="事件委托"><a href="#事件委托" class="header-anchor">#</a> 事件委托</h2> <p><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#Event_delegation" target="_blank" rel="noopener noreferrer">事件委托<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>：当需要在很多元素上绑定事件时，利用事件冒泡的特性，把绑定事件添加到它们的父元素上，而不是给很多的子元素绑定事件。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parent-list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>post-1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>post-2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>post-3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>post-4<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Item 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>post-5<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Item 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>post-6<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Item 6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;parent-list&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;click&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// e.target is the clicked element!</span>
+	<span class="token comment">// If it was a list item</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target <span class="token operator">&amp;&amp;</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>nodeName <span class="token operator">==</span> <span class="token string">&quot;LI&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">// List item found!  Output the ID!</span>
+		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;List item &quot;</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>id<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&quot;post-&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot; was clicked!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="节流与防抖"><a href="#节流与防抖" class="header-anchor">#</a> 节流与防抖</h2> <p><a href="http://demo.nimius.net/debounce_throttle/" target="_blank" rel="noopener noreferrer">在线例子<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>浏览器的滚动、窗口大小调整、按键等事件，可能会在短时间内触发多次，会导致严重的性能问题，所以需要使用<strong>防抖</strong>和<strong>节流</strong>来提升页面性能。这两种方式的本质都是以闭包的形式，通过对事件相应的回调函数进行包裹，以自由变量的形式缓存时间信息，最后用setTimeout来控制事件的触发频率。</p> <h3 id="节流-throttle"><a href="#节流-throttle" class="header-anchor">#</a> 节流(Throttle)</h3> <p>在某段时间内，不管事件触发了多少次，只执行第一次。</p> <p>使用场景：window.onresize()、mousemove、上传进度。</p> <p>实现方案有2种：</p> <ul><li>使用时间戳来判断是否已达到执行时间，记录上次执行的时间戳，然后每次触发事件执行回调，回调中判断当前时间戳距离上次执行时间戳的间隔是否已经达到时间差，如果是则执行，并更新上次执行的时间戳，如此循环。</li> <li>使用定时器，比如当scroll事件刚触发时，设置wait时间的定时器，此后每次触发scroll事件触发回调，如果已经存在定时器，则回调不执行，直到定时器触发，handler被清除，然后重新设置定时器。</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> interval</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> last <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment">// 上一次触发回调的时间</span>
+
+  <span class="token comment">// 将throttle处理结果当做函数返回</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 保留调用时的this上下文</span>
+    <span class="token keyword">let</span> context <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token comment">// 保留调用时传入的参数</span>
+    <span class="token keyword">let</span> args <span class="token operator">=</span> arguments
+    <span class="token comment">// 记录本次触发回调的时间</span>
+    <span class="token keyword">let</span> now <span class="token operator">=</span> <span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 判断上次触发的时间和本次触发的时间差是否小于时间间隔的阈值</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> last <span class="token operator">&gt;=</span> interval<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 如果时间间隔大于我们设定的时间间隔阈值，则执行回调</span>
+      last <span class="token operator">=</span> now
+      <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 用throttle来包装scroll的回调</span>
+<span class="token keyword">const</span> better_scroll <span class="token operator">=</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'滚动触发'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span>
+window<span class="token punctuation">.</span>onresize <span class="token operator">=</span> better_scroll
+</code></pre></div><h3 id="防抖-debounce"><a href="#防抖-debounce" class="header-anchor">#</a> 防抖(Debounce)</h3> <p>在某段时间内，不管事件触发了多少次，只执行最后一次。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> timer <span class="token operator">=</span> <span class="token keyword">null</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> context <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token keyword">let</span> args <span class="token operator">=</span> arguments
+    <span class="token comment">// 每次事件被触发时，都清除之前的旧定时器</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>timer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 设立新定时器</span>
+    timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> delay<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> better_scroll <span class="token operator">=</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'触发了'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span>
+window<span class="token punctuation">.</span>onresize <span class="token operator">=</span> better_scroll
+</code></pre></div><h3 id="用throttle来优化debounce"><a href="#用throttle来优化debounce" class="header-anchor">#</a> 用Throttle来优化Debounce</h3> <p>debounce存在的问题：如果用户的操作十分频繁，每次都不等debounce设置的delay时间结束就进行下一次操作，于是每次debounce都为该用户重新生成定时器，回调函数被延迟了不计其数次，频繁的延迟会导致用户迟迟得不到响应，用户同样会产生“这个页面卡死了”的感觉。</p> <p>优化：delay时间内，可以重新生成定时器，但只要delay的时间到了，必须要给用户一个响应。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> last <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> timer <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> context <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token keyword">let</span> args <span class="token operator">=</span> arguments
+    <span class="token keyword">let</span> now <span class="token operator">=</span> <span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 判断上次触发的时间和本次触发的时间差是否小于时间间隔的阈值</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> last <span class="token operator">&lt;</span> delay<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 小于时间间隔，则为本次触发操作设置一个新的定时器</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+      timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        last <span class="token operator">=</span> now
+        <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> delay<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 超出时间间隔，必须给用户一个反馈</span>
+      last <span class="token operator">=</span> now
+      <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> better_scroll <span class="token operator">=</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'触发了'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span>
+window<span class="token punctuation">.</span>onresize <span class="token operator">=</span> better_scroll<span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/likwotsing/kt-vuepress/edit/master/docs/zh/javascript/event-delegation.md" target="_blank" rel="noopener noreferrer">在Github 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2 个月前</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/kt-vuepress/zh/javascript/closure.html">
+        closure
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/kt-vuepress/assets/js/app.ed2bf4cb.js" defer></script><script src="/kt-vuepress/assets/js/2.90c87c0b.js" defer></script><script src="/kt-vuepress/assets/js/13.185f35f5.js" defer></script>
+  </body>
+</html>
